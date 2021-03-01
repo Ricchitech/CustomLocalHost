@@ -1,18 +1,28 @@
 /* Classic style for WampServer */
 
 * {
+	position: absolute;
+	top: 0;
+	left: 0;
 	margin: 0;
 	padding: 0;
 }
 
 html {
-	background: darkgrey;
+	/* background: darkgrey; */
+	background-image: linear-gradient(to right top, #f4b4d8, #d19cc8, #ae86b7, #8871a6, #625d93, #4a5a8f, #2f5789, #005481, #005f83, #006880, #007179, #0f7871);background-color: #cc00cc;
 }
 
 body {
+	margin-left: 5px;
+	margin-top: 5px;
+	margin-right:5px;
+	margin-bottom: 5px;
 	margin: 1em 10%;
 	padding: 1em 3em;
 	font: 80%/1.4 arial;
+	width: 100%;
+	height: 100%;
 	border: 1px solid #999;
 	background: #eee;
 	position: relative;
@@ -51,12 +61,6 @@ ul {
 	padding: 0;
 }
 
-#head ul li, dl ul li, #foot li {
-	list-style: none;
-	display: inline;
-	margin: 0;
-	padding: 0 0.4em;
-}
 
 ul.aliases, ul.projects, ul.tools, ul.vhost {
 	list-style: none;
@@ -135,11 +139,10 @@ a:hover {
 	color: #04569A;
 	text-decoration: underline;
 }
-
-#foot, #error {
+ #error {
 	text-align: center;
 	margin-top: 1.8em;
-	border-top: 1px solid #999;
+	border-top: 1px solid #999; 
 	padding-top: 1em;
 	font-size: 0.85em;
 }

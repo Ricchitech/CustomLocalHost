@@ -397,22 +397,42 @@ $pageContents = <<< EOPAGE
 	<link rel="shortcut icon" href="favicon.ico" type="image/ico" />
 </head>
 <style>
+
 	body{
+		margin-left: 5px;
+		margin-top: 5px;
+		margin-right:5px;
+		margin-bottom: 5px; 
+		height: 100%;
+		max-width: 100%;
+	
+		max-height: 100%;
+		min-height: 100%;
 		font-family: Rockwell;
 		font-weight: bold;
+		background-image: radial-gradient(circle, #7d6bd1, #ba5ea9, #ce6281, #c97464, #b6875c, #a58756, #938653, #828454, #717340, #60632b, #4f5317, #3f4300);
+		overflow: hidden;
 	}
 
+	#head{
+	margin-left: -30px;
+    background: rgba(0,0,0,0);
+    border: none;
+	width: 100%;
+	height: 100%;
+	}
 	abbr{
 		text-decoration: none;
+		color: black;
 	}
 	li{
-       border-radius: 5px;
+       border-radius: 25px;
        display:inline-block;
        padding:0;
        margin:0;
        margin-right:3px;
 	}
-	.headersec{
+.headersec{
 		font-size: 14px;
 	}
 a {
@@ -434,8 +454,9 @@ background: linear-gradient(to right, #FF8235, #30E8BF);
 }
 
 .projects li {
-	background: linear-gradient(to bottom left, #ff9999 0%, #ffff66 100%);
-	/* background: skyblue; */
+	background-image: linear-gradient(to left, #bcd7ff, #add9ff, #9cdcff, #89dfff, #76e1ff);
+	/* background: linear-gradient(to bottom left, #ff9999 0%, #ffff66 100%);
+	 background: skyblue; */
 }
 
 .tools li {
@@ -466,14 +487,15 @@ ul.aliases li, ul.projects li, ul.tools li, ul.vhost li, dd ul li {
 	float: left;
 	margin: 1em;
 	padding: 0.5em;
-	width: 200px;
+	width: 150px;
 	text-align: center;
 }
+
 li.projectsdir {
 	line-height:100%;
 	margin-top:10px;
 	font-size: 0.72em;
-	color: #04569A;
+	color: black;
 }
 dl {
 	margin: 1.2em;
@@ -491,46 +513,31 @@ dd {
 	margin: 0;
 	padding: 0.5em 1.5em;
 }
-
+#headnames{
+	font-family: Rockwell; font-size:42px; color: black;  position: relative; top: 15px; left: 20px; 
+}
  </style>
+<body>
 
-<body style="width: 100%; height: 100%; overflow: hidden;">
   <div id="head">
-    <div class="innerhead" >
-    	<div style="display: flex;">
-    	<img src="6.png" style="width: 75px; height: 75px;">
-<h1 style="font-family: Rockwell; font-size:42px;  position: relative; top: 15px; left: 20px; ">
-	R i c c h i &nbsp;T e c h
-	<!--    <abbr title="PHP">R</abbr>
-	    <abbr title="Apache">i</abbr>
-	    <abbr title="MySQL">c</abbr>
-	    <abbr title="HTML">c</abbr>
-	    <abbr title="CSS">h</abbr>
-	    <abbr title="JS">i</abbr> 
-	    &nbsp;
-		<abbr title="MySQL">T</abbr>
-	    <abbr title="HTML/CSS/JS">e</abbr>
-	    <abbr title="">c</abbr>
-	    <abbr title="">h</abbr> -->
-		</h1> </div>
-	     <ul class="headersec" style="position: absolute; top: 20px; right: 8px;"> 
-	     			  
-		    <li><a href="https://www.w3schools.com/php/default.asp" target="_blank">PHP</a> </li>
-			   <li><a href="https://www.w3schools.com/js/js_json_intro.asp" target="_blank">JSON</a></li>
-			   <li><a href="https://www.w3schools.com/html/default.asp" target="_blank">HTML 5</a></li>
-			   <li><a href="https://www.w3schools.com/css/default.asp" target="_blank">CSS 3</a></li>
-			   <li><a href="https://www.w3schools.com/js/default.asp" target="_blank">JS</a></li>
-			<li><a href="https://www.w3schools.com/angular/default.asp" target="_blank">Angular-JS</a></li>
-			   <li><a href="https://www.w3schools.com/js/js_ajax_intro.asp" target="_blank">AJAX</a></li>
-			   <li><a href="https://www.w3schools.com/jquery/default.asp" target="_blank">JQuery</a></li>
-			   <li><a href="https://www.w3schools.com/sql/default.asp" target="_blank">SQL</a></li>
+<img src="wampthemes/simple/backsvg1.svg" width="250px" height="250px" style=" position: absolute; right: 10px; top: 200px;">
+<div>
 
-		   </ul> 
-	    
-		  
-     </div>
+    		<img src="6.png" style="width: 75px; height: 75px; float: left;">
+    		    <div style="float: right;">
+    			<div class="column">
+	            <ul class="tools">
+		        <li><a href="?phpinfo=-1">My Server Info()</a></li>
+		            {$phpmyadminTool} {$addVhost}    	
+	            </ul>  
+	        </div>
+    	</div>
+    	</div>
+    <div class="innerhead">  <!-- style="opacity: 1;" -->
 
-	</div>
+     </div> 
+
+	
 
 <!--	<div class="config">
 	    <div class="innerconfig">
@@ -555,37 +562,27 @@ dd {
         </div>
     </div> 
 
-    <div class="divider1">&nbsp;</div> -->
+    <div class="divider1">&nbsp;</div>  -->
 
     <div class="alltools ${allToolsClass}">
 	    <div class="inneralltools">
 	        <div class="column">
 	            <h2>{$langues['titrePage']}</h2>
 	            <ul class="tools">
-		            <li><a href="?phpinfo=-1">My Server Info()</a></li>
-		    <!--        {$phpmyadminTool} {$addVhost} 
-		    	<li><a href="http://localhost/phpmyadmin/">DB Admin</a></li> -->
-		    	<li><a href="https://github.com/Ricchitech?tab=repositories">GitHub</a></li>
+		     <!--   <li><a href="?phpinfo=-1">My Server Info()</a></li>
+		            {$phpmyadminTool} {$addVhost}    	
+	            </ul>  -->
+	            <div class="column">
+	            <ul class="aliases">
+	 			<li><a href="https://github.com/Ricchitech?tab=repositories">GitHub</a></li>
 	             <li><a href="https://github.com/Ricchitech?tab=repositories">DropBox</a></li>  	
-	             <li><a href="https://github.com/Ricchitech?tab=repositories">Mega.nz</a></li>  
+	             <li><a href="https://github.com/Ricchitech?tab=repositories">Mega.nz</a></li> 
 	             <li><a href="http://localhost/phpmyadmin/">Git</a></li>
 		    	<li><a href="https://azure.microsoft.com/en-us/">Azure</a></li>
-	             <li><a href="http://savannah.nongnu.org/">CVS</a></li>  	
-	                 ${aliasContents}       	
+	             <li><a href="http://savannah.nongnu.org/">CVS</a></li> 
+	              <!--  ${aliasContents} -->
 	            </ul>
-	     <!--       <ul class="tools" id="tools1">
-		    	<li><a href="http://localhost/phpmyadmin/">Git</a></li>
-		    	<li><a href="https://azure.microsoft.com/en-us/">Azure</a></li>
-	             <li><a href="http://savannah.nongnu.org/">CVS</a></li>  	
-	                 ${aliasContents}    	
-	            </ul> -->
-	     <!--       <div class="column">
-	            <h2></h2>
-	            <ul class="aliases">
-	                ${aliasContents}
-	            </ul>
-	        </div> -->
-	        
+	        </div> 
 	        </div>
 	        		<div class="column">
 	            <h2>{$langues['txtProjet']}</h2>
@@ -615,43 +612,16 @@ $pageContents .= <<< EOPAGEC
         </div>
     </div>
 
-	<div class="divider2">&nbsp;</div>
+	<div class="divider2">&nbsp;
 
-	<ul id="foot" style="position: absolute; bottom: 0; right: 0; left: 0; height: 10px;">
+	<ul style="align-content: center;">
 	<!--	<li><a href="{$langues['forumLink']}">{$langues['forum']}</a></li> -->
-		<li><a href="https://github.com/Ricchitech?tab=repositories">Ricchi Tech</a></li>
+		<li style="margin-bottom: 50px;"><a href="https://github.com/Ricchitech?tab=repositories">Ricchi Tech</a></li>
 	</ul>
-			<ul class="utility" style="display: none;">
-	<!-- <li>Version ${c_wampVersion} - ${c_wampMode}</li> -->
-      <li>${styleswitcher}</li> <!-- ${langueswitcher} -->
-	  </ul>
+	</div>
+</div>
 
-<script>
-var select = document.getElementById("themes");
-if (select.addEventListener) {
-    /* Only for modern browser and IE > 9 */
-    var stylecall = document.getElementById("stylecall");
-    /* looking for stored style name */
-    var wampStyle = localStorage.getItem("wampStyle");
-    if (wampStyle !== null) {
-        stylecall.setAttribute("href", "wampthemes/" + wampStyle + "/style.css");
-        selectedOption = document.getElementById(wampStyle);
-        selectedOption.setAttribute("selected", "selected");
-    }
-    else {
-        localStorage.setItem("wampStyle","classic");
-        selectedOption = document.getElementById("classic");
-        selectedOption.setAttribute("selected", "selected");
-    }
-    /* Changing style when select change */
 
-    select.addEventListener("change", function(){
-        var styleName = this.value;
-        stylecall.setAttribute("href", "wampthemes/" + styleName + "/style.css");
-        localStorage.setItem("wampStyle", styleName);
-    })
-}
-</script>
 </body>
 </html>
 EOPAGEC;
